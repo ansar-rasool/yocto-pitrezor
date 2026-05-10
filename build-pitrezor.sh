@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-TAG=${1:-master}
+TAG=${1:-orinox_work}
 MACHINE=${2:-raspberrypi0-wifi} # raspberrypi0-wifi (default), raspberrypi4 or raspberrypi0-2w-64
 IMAGE=pitrezor-build
 IMGFILE=imgs/pitrezor-$MACHINE-$TAG.img
@@ -13,7 +13,7 @@ chown $DOCKER_UID:$DOCKER_UID imgs
 docker build -t $IMAGE .
 
 docker run -t --rm -v $(pwd)/imgs:/imgs:z $IMAGE /bin/bash -c "\
-git clone https://github.com/heneault/yocto-pitrezor.git && \
+git clone https://github.com/ansar-rasool/yocto-pitrezor.git && \
 cd yocto-pitrezor && \
 git checkout $TAG && \
 git submodule update --init --recursive && \
