@@ -13,7 +13,7 @@ SRC_URI = "git://github.com/ansar-rasool/trezor-firmware.git;branch=orinox_work 
            file://pitrezor.config \
           "
 
-SRCREV = "3d7a10c582d97dc975fdf9872a73b552be2339f0"
+SRCREV = "4cf65abec43be6471fcc05addd0d8bbb505fc0ea"
 
 S = "${WORKDIR}/git"
 
